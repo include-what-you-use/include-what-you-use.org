@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>include-what-you-use - A tool for use with clang to analyze #includes in C and C++ source files</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <style>
+        .iwyu-nav,
+        .iwyu-nav ul {
+            list-style: none;
+        }
+
+        .iwyu-nav {
+            padding-left: 0;
+        }
+        .iwyu-nav ul {
+            padding-left: 0;
+        }
+        
+        /*TODO(vsapsai): maybe line-height will be a better way to get some space between rows*/
+        .iwyu-nav li {
+            margin-bottom: 10px;
+        }
+        .iwyu-nav li ul {
+            margin-top: 5px;
+        }
+        </style>
+	</head>
+	<body class="container">
+		<div class="row">
+			<h1>include-what-you-use</h1>
+			<p class="lead">A tool for use with clang to analyze #includes in C and C++ source files</p>
+		</div>
+
+		<div class="row">
+			<ul class="iwyu-nav col-md-2">
+				<li><a href="http://groups.google.com/group/include-what-you-use">Discussion list</a></li>
+				<li><a href="https://code.google.com/p/include-what-you-use/issues/list">Issues</a></li>
+				<li><a href="https://code.google.com/p/include-what-you-use/source/checkout">Source</a></li>
+				<li><a href="http://buildbot.include-what-you-use.com:8010/grid">Buildbot</a></li>
+                <li>
+                    <strong>Wiki</strong>
+                    <ul>
+                        <li><a href="https://code.google.com/p/include-what-you-use/wiki/InstructionsForDevelopers" title="Introduction to Include What You Use for developers and bug-fixers">InstructionsForDevelopers</a></li>
+                        <li><a href="https://code.google.com/p/include-what-you-use/wiki/InstructionsForUsers" title="How to install and run include what you use">InstructionsForUsers</a></li>
+                        <li><a href="https://code.google.com/p/include-what-you-use/wiki/WhyIWYU" title="Why Bother with Include-What-You-Use?">WhyIWYU</a></li>
+                        <li><a href="https://code.google.com/p/include-what-you-use/w/list">All Wiki pages</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Downloads</strong>
+                    <ul>
+                        <li><a href="http://include-what-you-use.com/downloads/include-what-you-use-3.5.src.tar.gz">include-what-you-use-3.5.src.tar.gz</a></li>
+                        <li><a href="http://include-what-you-use.com/downloads/">All downloads</a></li>
+                        <li><a href="http://clang.llvm.org/get_started.html">Download clang</a></li>
+                    </ul>
+                </li>
+			</ul>
+
+			<div class="col-md-10">
+				<p>"Include what you use" means this: for every symbol (type, function variable, or macro) that you use in foo.cc, either foo.cc or foo.h should #include a .h file that exports the declaration of that symbol. The include-what-you-use tool is a program that can be built with the clang libraries in order to analyze #includes of source files to find include-what-you-use violations, and suggest fixes for them.</p>
+
+				<p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
+
+                <h4>4 June 2015</h4>
+                <p>iwyu 0.4 compatible with llvm+clang 3.6 is released. It contains the following changes:</p>
+                <ul>
+                  <li>fix_includes.py compatible with Python 3.</li>
+                  <li>iwyu_tool.py to run include-what-you-use with compilation database.</li>
+                  <li>Various bugfixes.</li>
+                </ul>
+
+                <p>For the full list of closed issues see <a href="https://code.google.com/p/include-what-you-use/issues/list?can=1&q=closed-after%3A2014%2F10%2F23+closed-before%3A2015%2F6%2F2">https://code.google.com/p/include-what-you-use/issues/list?can=1&q=closed-after%3A2014%2F10%2F23+closed-before%3A2015%2F6%2F2</a></p>
+
+                <p>This release received many contributions and I want to thank SmSpillaz, Paul Redmond, Chris Glover, Ryan Pavlik, showard314, Fabian Gruber, Kim Gräsman for your help. And thanks to Dave Johansen, MMendez534, Sylvestre Ledru for packaging include-what-you-use. Sorry if I've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="http://include-what-you-use.org/downloads/include-what-you-use-0.4.src.tar.gz">include-what-you-use-0.4.src.tar.gz</a>. It is equivalent to <code>clang_3.6</code> tag.</p>
+
+				<h4>25 November 2014</h4>
+				<p>iwyu 0.3 compatible with llvm+clang 3.5 is released. In this version we have</p>
+
+				<ul>
+					<li>Added rudimentary support for C code.</li>
+					<li>Improved MSVC support for templated code and precompiled headers.</li>
+					<li>Added support for public STL #includes, which improves the IWYU experience for libc++ users.</li>
+				</ul>
+
+				<p>For the full list of closed issues see <a href="https://code.google.com/p/include-what-you-use/issues/list?q=closed-after%3A2014%2F02%2F23&can=1">https://code.google.com/p/include-what-you-use/issues/list?q=closed-after%3A2014%2F02%2F23&can=1</a></p>
+
+				<p>The source code can be downloaded from <a href="http://include-what-you-use.com/downloads/include-what-you-use-3.5.src.tar.gz">include-what-you-use-3.5.src.tar.gz</a>. It is equivalent to <code>clang_3.5</code> tag.</p>
+                
+                <h4>22 February 2014</h4>
+                <p>iwyu version compatible with llvm+clang 3.4 is released. The source code can be downloaded from <a href="http://include-what-you-use.com/downloads/include-what-you-use-3.4.src.tar.gz">include-what-you-use-3.4.src.tar.gz</a>. It is equivalent to <code>clang_3.4</code> tag.</p>
+
+                <h4>11 August 2013</h4>
+                <p>We are moving downloads to Google Drive. iwyu version compatible with llvm+clang 3.3 can be found at <a href="https://docs.google.com/file/d/0ByBfuBCQcURXQktsT3ZjVmZtWkU/edit">include-what-you-use-3.3.tar.gz</a>. It is equivalent to <code>clang_3.3</code> tag.</p>
+                
+                <h4>6 December 2011</h4>
+                <p>Now that clang 3.0 is out, I released a version of iwyu that works against clang 3.0.  It is equivalent to r330.  It is available in the 'downloads' section on the side pane.  To use, just <code>cd</code> to <code>llvm/tools/clang/tools</code> in your llvm/clang tree, and untar <code>include-what-you-use-3.0-1.tar.gz</code> from that location.  Then cd to <code>include-what-you-use</code> and type <code>make</code>.  (A cmakefile is also available.)  You can run <code>make check-iwyu</code> to run the iwyu test suite.</p>
+
+                <h4>24 June 2011</h4>
+                <p>It was just pointed out to me the tarball I built against llvm+clang 2.9 doesn't actually compile with llvm+clang 2.9.  I must have made a mistake packaging it.  I've tried again; according to my tests, anyway, the new version works as it's supposed to.</p>
+
+                <h4>8 June 2011</h4>
+                <p>I finally got around to releasing a tarball that builds against llvm+clang 2.9.  See the 'downloads' section on the side pane.  This is a rather old version of iwyu at this point, so you'll do much better to download a current clang+llvm and the svn-root version of include-what-you-use, and build from that.  See <a href="http://code.google.com/p/include-what-you-use/source/browse/trunk/README.txt?r=260">README.txt</a> for more details.</p>
+
+                <h4>13 April 2011</h4>
+                <p>Work has been continuing at a furious pace on include-what-you-use.  It's definitely beta quality by now. :-)  Well, early beta.  I've not been making regular releases, but the SVN repository is being frequently updated, so don't take the lack of news here to mean a lack of activity.</p>
+
+                <h4>4 February 2011</h4>
+                <p>I'm very pleased to announce the very-alpha, version 0.1 release of include-what-you-use.  See the wiki links on the right for instructions on how to download, install, and run include-what-you-use.</p>
+
+                <p>I'm releasing the code as it is now under a "release early and often" approach.  It's still very early in iwyu, and the program will probably have mistakes on any non-trivial piece of code.  Furthermore, it still has google-specific bits that may not make much sense in an opensource release.  This will all get fixed over time.  Feel free to dig in and suggest patches to help the fixing along!</p>
+
+                <p>If you want to follow the discussion on include-what-you-use, and/or keep up to date with changes, subscribe to the
+                <a href="http://groups.google.com/group/include-what-you-use">Google Group</a>.</p>      
+			</div>
+		</div>
+	</body>
+</html>

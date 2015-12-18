@@ -55,8 +55,8 @@
                 <li>
                     <strong>Downloads</strong>
                     <ul>
-                        <li><a href="http://include-what-you-use.org/downloads/include-what-you-use-0.4.src.tar.gz">include-what-you-use-0.4.src.tar.gz</a></li>
-                        <li><a href="http://include-what-you-use.org/downloads/">All downloads</a></li>
+                        <li><a href="/downloads/include-what-you-use-0.5.src.tar.gz">include-what-you-use-0.5.src.tar.gz</a></li>
+                        <li><a href="/downloads/">All downloads</a></li>
                         <li><a href="http://clang.llvm.org/get_started.html">Download clang</a></li>
                     </ul>
                 </li>
@@ -66,6 +66,24 @@
 				<p>"Include what you use" means this: for every symbol (type, function variable, or macro) that you use in foo.cc, either foo.cc or foo.h should #include a .h file that exports the declaration of that symbol. The include-what-you-use tool is a program that can be built with the clang libraries in order to analyze #includes of source files to find include-what-you-use violations, and suggest fixes for them.</p>
 
 				<p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
+
+
+                <h4>17 December 2015</h4>
+                <p>iwyu 0.5 compatible with llvm+clang 3.7 is released. In this version we</p>
+                <ul>
+                  <li>Migrated to GitHub. It includes updated docs and improved testing infrastructure.</li>
+                  <li>Added Boost and Qt mappings.</li>
+                  <li>Have better support for using declarations.</li>
+                  <li>Allow <code>size_t</code> from multiple headers.</li>
+                  <li>Fixed handling includes with common path prefix.</li>
+                </ul>
+
+                <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.5%22+is%3Aclosed">https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.5%22+is%3Aclosed</a></p>
+
+                <p>Thanks for all your contributions Scott Howard, bungeman, tpltnt, Chris Glover, Kim Gräsman. And thank you for all you help Jérémie Delaitre, Richard Thomson, dpunset, Earnestly, Dave Johansen, ThosRTanner. Sorry if I've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="/downloads/include-what-you-use-0.5.src.tar.gz">include-what-you-use-0.5.src.tar.gz</a>. It is equivalent to <code>clang_3.7</code> tag.</p>
+
 
                 <h4>4 June 2015</h4>
                 <p>iwyu 0.4 compatible with llvm+clang 3.6 is released. It contains the following changes:</p>

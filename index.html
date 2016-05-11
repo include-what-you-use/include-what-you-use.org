@@ -53,7 +53,7 @@
                 <li>
                     <strong>Downloads</strong>
                     <ul>
-                        <li><a href="/downloads/include-what-you-use-0.5.src.tar.gz">include-what-you-use-0.5.src.tar.gz</a></li>
+                        <li><a href="/downloads/include-what-you-use-0.6.src.tar.gz">include-what-you-use-0.6.src.tar.gz</a></li>
                         <li><a href="/downloads/">All downloads</a></li>
                         <li><a href="http://clang.llvm.org/get_started.html">Download clang</a></li>
                     </ul>
@@ -65,6 +65,22 @@
 
 				<p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
 
+
+                <h4>May 2016</h4>
+                <p>iwyu 0.6 compatible with llvm+clang 3.8 is released. In this version we</p>
+                <ul>
+                  <li>Added mappings for Qt 5.4.</li>
+                  <li>Added better analysis of uses in macros.</li>
+                  <li>Added <code>--no_comments</code> switch to suppress why-comments.</li>
+                  <li>Fixed bug with global namespace qualifier on friend declarations.</li>
+                  <li>Fixed bug in <code>fix_includes.py</code> generating invalid diff output.</li>
+                </ul>
+
+                <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.6%22+is%3Aclosed">https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.6%22+is%3Aclosed</a></p>
+
+                <p>Thanks for all your contributions and help JVApen, Kim Gräsman, Philip Pfaffe, pseyfert, realazthat, Sylvestre Ledru, ThosRTanner. Sorry if I've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="/downloads/include-what-you-use-0.6.src.tar.gz">include-what-you-use-0.6.src.tar.gz</a>. It is equivalent to <code>clang_3.8</code> tag.</p>
 
                 <h4>17 December 2015</h4>
                 <p>iwyu 0.5 compatible with llvm+clang 3.7 is released. In this version we</p>

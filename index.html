@@ -66,6 +66,26 @@
 				<p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
 
 
+                <h4>5 Oct 2016</h4>
+                <p>iwyu 0.7 compatible with llvm+clang 3.9 is released. Major changes:</p>
+                <ul>
+                  <li>Add preliminary mappings for libc++</li>
+                  <li>Require the complete type for pointer arithmetic</li>
+                  <li>Recognize nested classes in friend declarations </li>
+                  <li>Better handling of X-macros/textual includes</li>
+                  <li>Better handling of self-checking private headers (that raise an <code>#error</code> if included directly)</li>
+                  <li>Improve IWYU's understanding of implicit include dirs; the current source file's dirname is always a candidate now</li>
+                  <li>Add implicit include dirs for libc++ on Darwin targets</li>
+                  <li>Lots of internal cleanup based on output from clang-tidy</li>
+                  <li>Reduce logging strategically, to get more relevant output</li>
+                </ul>
+
+                <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.7%22+is%3Aclosed">https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.7%22+is%3Aclosed</a></p>
+
+                <p>Thanks for all your contributions and help Bothari, Eugene Zelenko, Flamefire, Kim Gräsman. Sorry if I've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="/downloads/include-what-you-use-0.7.src.tar.gz">include-what-you-use-0.7.src.tar.gz</a>. It is equivalent to <code>clang_3.9</code> tag.</p>
+
                 <h4>15 May 2016</h4>
                 <p>iwyu 0.6 compatible with llvm+clang 3.8 is released. In this version we</p>
                 <ul>

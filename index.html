@@ -66,21 +66,21 @@
 				<p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
 
 
-                <h4>DD August 2017</h4>
+                <h4>3 August 2017</h4>
                 <p>iwyu 0.8 compatible with llvm+clang 4.0.0 is released. Major changes:</p>
                 <ul>
                   <li>Add support for <code>IWYU pragma: associated</code></li>
-                  <li>Better validation of pragma syntax in general</li>
-                  <li>Improve support for out-of-tree builds, especially with MSVC</li>
+                  <li>Better validation of pragma syntax in general.</li>
+                  <li>Improve support for out-of-tree builds, especially with MSVC.</li>
                   <li>Add more compiler-like output for <code>iwyu_tool.py</code></li>
-                  <li>Further improve location reporting in macros</li>
-                  <li>Stricter requirements for arrays of templates</li>
-                  <li>Better recognition of <code>typedef</code> types for by-value arguments</li>
-                  <li>Better function pointers support</li>
-                  <li>Documentation improvements</li>
-                  <li>Extend <code>IWYU pragma: keep</code> to work with forward declarations</li>
+                  <li>Further improve location reporting in macros.</li>
+                  <li>Stricter requirements for arrays of templates.</li>
+                  <li>Better recognition of <code>typedef</code> types for by-value arguments.</li>
+                  <li>Better function pointers support.</li>
+                  <li>Documentation improvements.</li>
+                  <li>Extend <code>IWYU pragma: keep</code> to work with forward declarations.</li>
                   <li>Fix Windows path handling in <code>fix_includes.py</code></li>
-                  <li>Better libc++ container support</li>
+                  <li>Better libc++ container support.</li>
                 </ul>
 
                 <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.8%22+is%3Aclosed">https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.8%22+is%3Aclosed</a></p>

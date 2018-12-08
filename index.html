@@ -65,6 +65,24 @@
 
                 <p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
 
+                <h4>8 December 2018</h4>
+                <p>iwyu 0.11 compatible with llvm+clang 7.0 is released. Major changes:</p>
+                <ul>
+                    <li>[iwyu] Improved recognition of template and specialization uses</li>
+                    <li>[iwyu] Improved CMake build system, see docs for build instructions</li>
+                    <li>[mappings] Improved mappings for Boost, Intel intrinsics and libstdc++</li>
+                    <li>[iwyu_tool] Several bug fixes and improvements</li>
+                    <li>[iwyu_tool] Add <code>--basedir</code> argument to interpret IWYU output from another source tree</li>
+                    <li>[fix_includes] Handle namespaces better</li>
+                    <li>[fix_includes] Add <code>--only_re</code> switch to filter affected files</li>
+                    <li>[fix_includes] Add <code>--reorder/--noreorder</code> switch to toggle reordering of includes</li>
+                </ul>
+
+                <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.11%22">https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.11%22</a></p>
+
+                <p>Contributions in this release by Asier Lacasta, Christian Venegas, Ignat Loskutov, J.Ru, Kim Grasman, Martin Villagra, Paul Seyfert, Phantal, Philip Pfaffe, Scott Ramsby, Tom Rix, Victor Poughon. Sorry if we've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="/downloads/include-what-you-use-0.11.src.tar.gz">include-what-you-use-0.11.src.tar.gz</a>. It is equivalent to the <code>clang_7.0</code> tag.</p>
 
                 <h4>30 April 2018</h4>
                 <p>iwyu 0.10 compatible with llvm+clang 6.0 is released. Major changes:</p>

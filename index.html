@@ -53,7 +53,7 @@
                 <li>
                     <strong>Downloads</strong>
                     <ul>
-                        <li><a href="/downloads/include-what-you-use-0.11.src.tar.gz">include-what-you-use-0.11.src.tar.gz</a></li>
+                        <li><a href="/downloads/include-what-you-use-0.12.src.tar.gz">include-what-you-use-0.12.src.tar.gz</a></li>
                         <li><a href="/downloads/">All downloads</a></li>
                         <li><a href="http://clang.llvm.org/get_started.html">Download clang</a></li>
                     </ul>
@@ -64,6 +64,25 @@
                 <p>"Include what you use" means this: for every symbol (type, function variable, or macro) that you use in foo.cc, either foo.cc or foo.h should #include a .h file that exports the declaration of that symbol. The include-what-you-use tool is a program that can be built with the clang libraries in order to analyze #includes of source files to find include-what-you-use violations, and suggest fixes for them.</p>
 
                 <p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
+
+                <h4>15 April 2019</h4>
+                <p>iwyu 0.12 compatible with llvm+clang 8.0 is released. Major changes:</p>
+                <ul>
+                    <li>[iwyu] New command-line option: <code>--keep</code> to mirror <code>IWYU pragma: keep</code></li>
+                    <li>[iwyu] New command-line option: <code>--cxx17ns</code> to suggest compact C++17 nested namespaces</li>
+                    <li>[iwyu] Improve <code>--no_fwd_decls</code> to optimize for minimal number of redeclarations</li>
+                    <li>[iwyu] Improved mappings for POSIX types and let mappings apply to builtins as well</li>
+                    <li>[iwyu] More principled handling of explicit template instantiations</li>
+                    <li>[iwyu_tool] Breaking change: extra args are no longer automatically prefixed with <code>-Xiwyu</code> (so you can use them for Clang args too)</li>
+                    <li>[iwyu_tool] Better Windows support</li>
+                    <li>[fix_includes] Better handling of template forward-decls</li>
+                </ul>
+
+                <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.12%22">https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.12%22</a></p>
+
+                <p>Contributions in this release by Asier Lacasta, David Robillard, Ignat Loskutov, Jakub Wilk, John Bytheway, J.Ru, Kim Grasman, Martin Villagra, Miklos Vajna, tomKPZ, Tom Rix. Sorry if we've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="/downloads/include-what-you-use-0.12.src.tar.gz">include-what-you-use-0.12.src.tar.gz</a>. It is equivalent to the <code>clang_8.0</code> tag.</p>
 
                 <h4>8 December 2018</h4>
                 <p>iwyu 0.11 compatible with llvm+clang 7.0 is released. Major changes:</p>

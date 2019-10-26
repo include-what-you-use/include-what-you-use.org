@@ -53,7 +53,7 @@
                 <li>
                     <strong>Downloads</strong>
                     <ul>
-                        <li><a href="/downloads/include-what-you-use-0.12.src.tar.gz">include-what-you-use-0.12.src.tar.gz</a></li>
+                        <li><a href="/downloads/include-what-you-use-0.13.src.tar.gz">include-what-you-use-0.13.src.tar.gz</a></li>
                         <li><a href="/downloads/">All downloads</a></li>
                         <li><a href="http://clang.llvm.org/get_started.html">Download clang</a></li>
                     </ul>
@@ -64,6 +64,26 @@
                 <p>"Include what you use" means this: for every symbol (type, function variable, or macro) that you use in foo.cc, either foo.cc or foo.h should #include a .h file that exports the declaration of that symbol. The include-what-you-use tool is a program that can be built with the clang libraries in order to analyze #includes of source files to find include-what-you-use violations, and suggest fixes for them.</p>
 
                 <p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
+
+                <h4>26 October 2019</h4>
+                <p>iwyu 0.13 compatible with llvm+clang 9.0 is released. Major changes:</p>
+                <ul>
+                    <li>[iwyu] Improved handling of relative includes in mappings and pragmas</li>
+                    <li>[iwyu] Path normalization now collapses <code>..</code></li>
+                    <li>[iwyu] Improve <code>--no_fwd_decls</code> not to remove required forward declarations</li>
+                    <li>[iwyu] Improved handling of builtin templates</li>
+                    <li>[iwyu] Don't mark forward declarations <code>final</code></li>
+                    <li>[iwyu] Tolerate <code>using</code> declarations in precompiled header</li>
+                    <li>[mappings] Add script to generate Qt mappings, and new mappings for Qt 5.11</li>
+                    <li>[iwyu_tool] Use <code>directory</code> from compilation database if available</li>
+                    <li>Numerous documentation and build improvements</li>
+                </ul>
+
+                <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.13%22">the <code>iwyu-0.13</code> milestone</a>.</p>
+
+                <p>Contributions in this release by Alexander Grund, i-ky, John Bytheway, Julien Cabieces, Kim Grasman, Levente Győző Lénárt, Miklos Vajna, Uladzislau Paulovich and Zachary Henkel. Sorry if we've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="/downloads/include-what-you-use-0.13.src.tar.gz">include-what-you-use-0.13.src.tar.gz</a>. It is equivalent to the <code>0.13</code> tag and <code>clang_9.0</code> branch. Note that there's no <code>clang_9.0</code> tag this time, to avoid tag/branch confusion.</p>
 
                 <h4>15 April 2019</h4>
                 <p>iwyu 0.12 compatible with llvm+clang 8.0 is released. Major changes:</p>

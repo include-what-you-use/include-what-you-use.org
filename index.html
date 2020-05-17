@@ -53,7 +53,7 @@
                 <li>
                     <strong>Downloads</strong>
                     <ul>
-                        <li><a href="/downloads/include-what-you-use-0.13.src.tar.gz">include-what-you-use-0.13.src.tar.gz</a></li>
+                        <li><a href="/downloads/include-what-you-use-0.14.src.tar.gz">include-what-you-use-0.14.src.tar.gz</a></li>
                         <li><a href="/downloads/">All downloads</a></li>
                         <li><a href="http://clang.llvm.org/get_started.html">Download clang</a></li>
                     </ul>
@@ -64,6 +64,29 @@
                 <p>"Include what you use" means this: for every symbol (type, function variable, or macro) that you use in foo.cc, either foo.cc or foo.h should #include a .h file that exports the declaration of that symbol. The include-what-you-use tool is a program that can be built with the clang libraries in order to analyze #includes of source files to find include-what-you-use violations, and suggest fixes for them.</p>
 
                 <p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
+
+                <h4>17 May 2020</h4>
+                <p>iwyu 0.14 compatible with llvm+clang 10 is released. Major changes:</p>
+                <ul>
+                    <li>[iwyu] Report non-builtin enum base types</li>
+                    <li>[iwyu] Disable forward-declares for decls in inline namespaces</li>
+                    <li>[iwyu] Make C structs forward-declarable again</li>
+                    <li>[iwyu] Always keep Qt .moc includes</li>
+                    <li>[iwyu] Include binary type traits in analysis (e.g. <code>__is_convertible_to</code>)</li>
+
+                    <li>[iwyu_tool] Fail fast if include-what-you-use is not found</li>
+                    <li>[iwyu_tool] Print all diagnostic ouptut to stderr</li>
+
+                    <li>[fix_includes] Improve file extension detection</li>
+
+                    <li>Add man page for include-what-you-use</li>
+                </ul>
+
+                <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.14%22">the <code>iwyu-0.14</code> milestone</a>.</p>
+
+                <p>Contributions in this release by Aaron Puchert, Kim Grasman, Miklos Vajna, Nick Overdijk, Uladzislau Paulovich. Sorry if we've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="/downloads/include-what-you-use-0.14.src.tar.gz">include-what-you-use-0.14.src.tar.gz</a>. It is equivalent to the <code>0.14</code> tag and <code>clang_10</code> branch.</p>
 
                 <h4>26 October 2019</h4>
                 <p>iwyu 0.13 compatible with llvm+clang 9.0 is released. Major changes:</p>

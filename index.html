@@ -53,7 +53,7 @@
                 <li>
                     <strong>Downloads</strong>
                     <ul>
-                        <li><a href="/downloads/include-what-you-use-0.14.src.tar.gz">include-what-you-use-0.14.src.tar.gz</a></li>
+                        <li><a href="/downloads/include-what-you-use-0.15.src.tar.gz">include-what-you-use-0.15.src.tar.gz</a></li>
                         <li><a href="/downloads/">All downloads</a></li>
                         <li><a href="http://clang.llvm.org/get_started.html">Download clang</a></li>
                     </ul>
@@ -64,6 +64,26 @@
                 <p>"Include what you use" means this: for every symbol (type, function variable, or macro) that you use in foo.cc, either foo.cc or foo.h should #include a .h file that exports the declaration of that symbol. The include-what-you-use tool is a program that can be built with the clang libraries in order to analyze #includes of source files to find include-what-you-use violations, and suggest fixes for them.</p>
 
                 <p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
+
+                <h4>21 November 2020</h4>
+                <p>iwyu 0.15 compatible with llvm+clang 11 is released. Major changes:</p>
+                <ul>
+                    <li>[iwyu] Fix crash due to undefined behavior in AST traversal</li>
+                    <li>[iwyu] Improve handling of operator new including C++17 features</li>
+                    <li>[iwyu] Improve handling of templates</li>
+                    <li>[iwyu_tool] Remove known compiler wrappers from the command list</li>
+                    <li>[mappings] Improve Qt mapping generator</li>
+                    <li>[mappings] Improve boost mappings</li>
+                    <li>[mappings] Improve built-in mappings for <code>&lt;time.h&gt;</code></li>
+                    <li>[mappings] Add built-in mappings for <code>max_align_t</code>, <code>ptrdiff_t</code>, and <code>wchar_t</code></li>
+                    <li>[cmake] Support shared LLVM/Clang libraries and other improvements</li>
+                </ul>
+
+                <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.15%22">the <code>iwyu 0.15</code> milestone</a>.</p>
+
+                <p>Contributions in this release by Andrea Bocci, David Callu, Emil Gedda, Florian Schmaus, John Bytheway, Kim Grasman, Liam Keegan, Omar Sandoval, pppyx, Romain Geissler, Seth R Johnson, Tim Gates. Sorry if we've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="/downloads/include-what-you-use-0.15.src.tar.gz">include-what-you-use-0.15.src.tar.gz</a>. It is equivalent to the <code>0.15</code> tag and <code>clang_11</code> branch.</p>
 
                 <h4>17 May 2020</h4>
                 <p>iwyu 0.14 compatible with llvm+clang 10 is released. Major changes:</p>

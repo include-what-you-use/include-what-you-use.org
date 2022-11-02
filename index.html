@@ -63,6 +63,29 @@
 
                 <p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
 
+                <h4>02 Nov 2022</h4>
+                <p>iwyu 0.19 compatible with llvm+clang 15 is released. Major changes:</p>
+                <ul>
+                    <li>[iwyu] New <code>--comment_style</code> option to control verbosity of 'why' comments</li>
+                    <li>[iwyu] New <code>--regex</code> option to select regex dialect</li>
+                    <li>[iwyu] Add support for regex replacement in mappings</li>
+                    <li>[iwyu] Add <code>begin_keep</code>/<code>end_keep</code> pragmas for protecting ranges of includes or forward-declares</li>
+                    <li>[iwyu] Fix several crasher bugs for unusual inputs</li>
+                    <li>[iwyu] More exhaustive handling of type aliases and enums</li>
+                    <li>[iwyu] Recognize IWYU pragmas in CRLF source files</li>
+                    <li>[iwyu] Respect configured toolchain on macOS (and overrides via <code>-nostdinc++</code> + <code>-isystem</code>)</li>
+                    <li>[fix_includes] Recognize namespace alias declarations</li>
+                    <li>[mappings] Improve mappings for POSIX and libc headers</li>
+                    <li>[cmake] Build now requires a C++17 compiler (as does LLVM)</li>
+                    <li>[cmake] Support LLVM external project build (see README)</li>
+                </ul>
+
+                <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.19%22">the <code>iwyu 0.19</code> milestone</a>.</p>
+
+                <p>Contributions in this release by Aaron Puchert, Alejandro Colomar, Andrey Ali Khan Bolshakov, Boleyn Su, Daniel Hannon, Et7f3, fanquake, Jan Kokemüller, Jean-Philippe Gravel, jspam, Kim Gräsman. Sorry if we've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="/downloads/include-what-you-use-0.19.src.tar.gz">include-what-you-use-0.19.src.tar.gz</a>. It is equivalent to the <code>0.19</code> tag and <code>clang_15</code> branch.</p>
+
                 <h4>31 Mar 2022</h4>
                 <p>iwyu 0.18 compatible with llvm+clang 14 is released. Major changes:</p>
                 <ul>

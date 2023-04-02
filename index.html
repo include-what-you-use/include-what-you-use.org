@@ -63,6 +63,25 @@
 
                 <p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
 
+                <h4>02 Apr 2023</h4>
+                <p>iwyu 0.20 compatible with llvm+clang 16 is released. Major changes:</p>
+                <ul>
+                    <li>[iwyu] Support <code>IWYU pragma: export</code> for forward-declarations</li>
+                    <li>[iwyu] Silently break cycles in mappings instead of crashing</li>
+                    <li>[iwyu] Require full type inside <code>typeid()</code></li>
+                    <li>[iwyu] Improve template reporting and resugaring</li>
+                    <li>[iwyu] Improve reporting of explicit template instantiations</li>
+                    <li>[iwyu] Fix a few crashers</li>
+                    <li>[iwyu] Improve logging (many small fixes)</li>
+                    <li>Abandon python2 for scripts in favor of python3</li>
+                </ul>
+
+                <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.20%22">the <code>iwyu 0.20</code> milestone</a>.</p>
+
+                <p>Contributions in this release by Andrey Ali Khan Bolshakov, David Kilroy, Kim Gräsman, Matthew Fennell, Petr Bred, Sameer Rahmani, Seth R. Johnson. Sorry if we've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="/downloads/include-what-you-use-0.20.src.tar.gz">include-what-you-use-0.20.src.tar.gz</a>. It is equivalent to the <code>0.20</code> tag and <code>clang_16</code> branch.</p>
+
                 <h4>02 Nov 2022</h4>
                 <p>iwyu 0.19 compatible with llvm+clang 15 is released. Major changes:</p>
                 <ul>

@@ -63,6 +63,24 @@
 
                 <p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
 
+                <h4>08 Nov 2023</h4>
+                <p>iwyu 0.21 compatible with llvm+clang 17 is released. Major changes:</p>
+                <ul>
+                    <li>[iwyu] Improve analysis of type aliases (<code>typedef</code> and <code>using</code>)</li>
+                    <li>[iwyu] Improve analysis of namespace aliases (<code>namespace xyz = foobar</code>)</li>
+                    <li>[iwyu] Improve support for elaborated forward declarations (<code>typedef struct Foo Bar;</code>)</li>
+                    <li>[iwyu] Improve handling of "autocast" and function return types, particularly with complex template types.</li>
+                    <li>[iwyu] Add new <code>IWYU pragma: always_keep</code>, which lets a header announce that it should always be kept wherever included</li>
+                    <li>[iwyu] Automatically use builtin libc++ mappings if libc++ is the active standard library</li>
+                    <li>[mappings] Improve mappings for libc++ and posix headers</li>
+                </ul>
+
+                <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.21%22">the <code>iwyu 0.21</code> milestone</a>.</p>
+
+                <p>Contributions in this release by Alejandro Colomar, Andrey Ali Khan Bolshakov, David Kilroy, Florian Schmaus, Kim Gräsman. Sorry if we've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="/downloads/include-what-you-use-0.21.src.tar.gz">include-what-you-use-0.21.src.tar.gz</a>. It is equivalent to the <code>0.21</code> tag and <code>clang_17</code> branch.</p>
+
                 <h4>02 Apr 2023</h4>
                 <p>iwyu 0.20 compatible with llvm+clang 16 is released. Major changes:</p>
                 <ul>

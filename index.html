@@ -63,6 +63,26 @@
 
                 <p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
 
+                <h4>11 Mar 2024</h4>
+                <p>iwyu 0.22 compatible with llvm+clang 18 is released. Major changes:</p>
+                <ul>
+                    <li>[iwyu] Improve type analysis for typedefs, aliases and templates</li>
+                    <li>[iwyu] Improve analysis of macros expanding macros</li>
+                    <li>[iwyu] Improve IWYU driver for better validation and job handling</li>
+                    <li>[iwyu] Reject IWYU invocations with precompiled headers (see FAQ)</li>
+                    <li>[iwyu_tool] Better preserve failure exit codes</li>
+                    <li>[mappings] Add mappings for libstdc++ <code>&lt;debug/...&gt;</code> headers</li>
+                    <li>[mappings] Make mappings for POSIX and standard C headers stricter (more portable)</li>
+                    <li>[doc] Add separate FAQ page for longer-form practical user documentation</li>
+                    <li>[ci] IWYU now runs on itself in CI (finally!)</li>
+                </ul>
+
+                <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.22%22">the <code>iwyu 0.22</code> milestone</a>.</p>
+
+                <p>Contributions in this release by Alejandro Colomar, Bolshakov, David Kilroy, Kim Gräsman, kon72. Sorry if we've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="/downloads/include-what-you-use-0.22.src.tar.gz">include-what-you-use-0.22.src.tar.gz</a>. It is equivalent to the <code>0.22</code> tag and <code>clang_18</code> branch.</p>
+
                 <h4>08 Nov 2023</h4>
                 <p>iwyu 0.21 compatible with llvm+clang 17 is released. Major changes:</p>
                 <ul>

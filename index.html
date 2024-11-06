@@ -63,6 +63,32 @@
 
                 <p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
 
+                <h4>10 Nov 2024</h4>
+                <p>iwyu 0.23 compatible with llvm+clang 19 is released. Major changes:</p>
+                <ul>
+                    <li>[iwyu] New policy for finding compiler built-in headers (breaking change)</li>
+                    <li>[iwyu] Treat types from overridden method signatures as provided by base</li>
+                    <li>[iwyu] Analyze associated headers more closely with their source file</li>
+                    <li>[iwyu] Many improvements for template analysis</li>
+                    <li>[iwyu] Accept -xc++-header</li>
+                    <li>[iwyu] Improve reporting of binary operators in macros</li>
+                    <li>[iwyu] Improve heuristics for reporting overloaded functions</li>
+                    <li>[iwyu] Consider variable definitions uses of extern declarations</li>
+                    <li>[mappings] Add mapping generator for GNU libstdc++</li>
+                    <li>[mappings] Regenerate mappings for GNU libstdc++ version 11</li>
+                    <li>[mappings] Improve dynamic <code>@headername</code> mappings</li>
+                    <li>[mappings] Update public standard library header list for C++23</li>
+                    <li>[mappings] Improve mappings for standard C library</li>
+                    <li>[iwyu_tool] Add new 'clang-warning' formatter</li>
+                    <li>[iwyu_tool] Default to system core count if -j is omitted</li>
+                </ul>
+
+                <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.23%22">the <code>iwyu 0.23</code> milestone</a>.</p>
+
+                <p>Contributions in this release by Alejandro Colomar, Alfredo Correa, Bolshakov, Chris Down, firewave, Jean-Philippe Gravel, Kim Gräsman, kon72, Michele Caini, Petar Vutov, Richard, scuzqy, ShalokShalom, Thomas Tanner. Sorry if we've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="/downloads/include-what-you-use-0.23.src.tar.gz">include-what-you-use-0.23.src.tar.gz</a>. It is equivalent to the <code>0.23</code> tag and <code>clang_19</code> branch.</p>
+
                 <h4>11 Mar 2024</h4>
                 <p>iwyu 0.22 compatible with llvm+clang 18 is released. Major changes:</p>
                 <ul>

@@ -63,6 +63,22 @@
 
                 <p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
 
+                <h4>05 Apr 2025</h4>
+                <p>iwyu 0.24 compatible with llvm+clang 20 is released. Major changes:</p>
+                <ul>
+                    <li>[iwyu] Improve handling of type traits</li>
+                    <li>[iwyu] Improve type analysis</li>
+                    <li>[mappings] Improve libstdc++ mappings</li>
+                    <li>[fix_includes] Implement <code>--quoted_includes_first</code></li>
+                    <li>Released source archives now come GPG-signed with a detached <code>.asc</code> file</li>
+                </ul>
+
+                <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.24%22">the <code>iwyu 0.24</code> milestone</a>.</p>
+
+                <p>Contributions in this release by Bolshakov, hexagon-recursion, JasonnnW3000, Kim Gräsman, kon72, ruinansun. Sorry if we've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="/downloads/include-what-you-use-0.24.src.tar.gz">include-what-you-use-0.24.src.tar.gz</a>. It is equivalent to the <code>0.24</code> tag and <code>clang_20</code> branch.</p>
+
                 <h4>10 Nov 2024</h4>
                 <p>iwyu 0.23 compatible with llvm+clang 19 is released. Major changes:</p>
                 <ul>

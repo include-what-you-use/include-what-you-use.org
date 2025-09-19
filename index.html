@@ -63,6 +63,28 @@
 
                 <p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
 
+                <h4>20 Sep 2025</h4>
+                <p>iwyu 0.25 compatible with llvm+clang 21 is released. Major changes:</p>
+                <ul>
+                    <li>[iwyu] Add support for GNU <code>__cleanup__</code> attribute</li>
+                    <li>[iwyu] Improve handling of member pointers</li>
+                    <li>[iwyu] Improve reporting of C arrays</li>
+                    <li>[iwyu] Improve understanding of builtin type traits</li>
+                    <li>[iwyu] Add <code>--export_mappings</code> option to generate external mappings from internal (breaking change)</li>
+                    <li>[iwyu_tool] Add <code>--exclude</code> option to skip individual source files</li>
+                    <li>[mappings] Add mapping generator for Apple Libc</li>
+                    <li>[mappings] Improve libc and POSIX mappings</li>
+                    <li>[ci] Add a <a href="https://github.com/include-what-you-use/include-what-you-use/blob/e8498e9/tests/bugs/README.md">test suite for all reproduced open bugs</a></li>
+                </ul>
+
+                <p>Note the breaking change for <code>.imp</code> external mappings; IWYU no longer ships <code>.imp</code> files with the mappings already built into the <code>include-what-you-use</code> executable. Instead, use <code>include-what-you-use --export_mappings</code> to write them out on demand. See <a href="https://github.com/include-what-you-use/include-what-you-use/blob/43901e1/docs/IWYUMappings.md#command-line-switches-for-mapping-files">documentation</a> for more information.</p>
+
+                <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.25%22">the <code>iwyu 0.25</code> milestone</a>.</p>
+
+                <p>Contributions in this release by Aaron Puchert, Alex Overchenko, Bolshakov, Daan De Meyer, Kim Gräsman, Mohamed Akram. Sorry if we've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="/downloads/include-what-you-use-0.25.src.tar.gz">include-what-you-use-0.25.src.tar.gz</a>. It is equivalent to the <code>0.25</code> tag and <code>clang_21</code> branch.</p>
+
                 <h4>05 Apr 2025</h4>
                 <p>iwyu 0.24 compatible with llvm+clang 20 is released. Major changes:</p>
                 <ul>

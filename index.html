@@ -63,6 +63,23 @@
 
                 <p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
 
+                <h4>22 Mar 2026</h4>
+                <p>iwyu 0.26 compatible with llvm+clang 22 is released. Major changes:</p>
+                <ul>
+                    <li>[iwyu] Many improvements around the understanding of types, particularly templates</li>
+                    <li>[iwyu] Improve handling of builtin type traits</li>
+                    <li>[mappings] Add support for distinguishing function overloads and template specializations in mappings</li>
+                    <li>[mappings] Add mapping generator for Windows.h</li>
+                    <li>[mappings] Add mapping generator for portable C++ standard library symbols</li>
+                    <li>[mappings] Improve libc, libc++ and POSIX mappings</li>
+                </ul>
+
+                <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.26%22">the <code>iwyu 0.26</code> milestone</a>.</p>
+
+                <p>Contributions in this release by Bolshakov, Dennis Lambe Jr., HannaWAR, Hennadii Stepanov, Jashank Jeremy, Kim Gräsman, nmushtak-netflix, R. Elliott Childre, Tomáš Slanina. Sorry if we've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="/downloads/include-what-you-use-0.26.src.tar.gz">include-what-you-use-0.26.src.tar.gz</a>. It is equivalent to the <code>0.26</code> tag and <code>clang_22</code> branch.</p>
+
                 <h4>20 Sep 2025</h4>
                 <p>iwyu 0.25 compatible with llvm+clang 21 is released. Major changes:</p>
                 <ul>

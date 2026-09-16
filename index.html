@@ -63,6 +63,26 @@
 
                 <p>The main goal of include-what-you-use is to remove superfluous #includes. It does this both by figuring out what #includes are not actually needed for this file (for both .cc and .h files), and replacing #includes with forward-declares when possible.</p>
 
+                <h4>05 Oct 2026</h4>
+                <p>iwyu 0.27 compatible with llvm+clang 23 is released. Major changes:</p>
+                <ul>
+                    <li>[iwyu] Improve printing of forward-declarations</li>
+                    <li>[iwyu] Fix several crashes on valid inputs</li>
+                    <li>[iwyu] Improve analysis of template types</li>
+                    <li>[iwyu] Always keep includes embedded in language constructs</li>
+                    <li>[cmake] Add <code>IWYU_USE_SYSTEM_GTEST</code> option to use system googletest instead of bundled</li>
+                    <li>[mappings] Add mappings and generators for Clang builtin and intrinsics headers</li>
+                    <li>[mappings] Allow forward-decl-specific symbol mappings (e.g. for mapping fwd-decl uses of <code>std::basic_ios</code> to <code>&lt;iosfwd&gt;</code>)</li>
+                    <li>[mappings] Prefer <code>&lt;c*&gt;</code> headers for C library symbols in C++ mode</li>
+                    <li>[fix_includes] Add <code>--always_first_include</code> option to force particular headers to the top</li>
+                </ul>
+
+                <p>For the full list of closed issues see <a href="https://github.com/include-what-you-use/include-what-you-use/issues?q=milestone%3A%22iwyu+0.27%22">the <code>iwyu 0.27</code> milestone</a>.</p>
+
+                <p>Contributions in this release by Bolshakov, Eric Chamberland, Hennadii Stepanov, Kim Gräsman, l0rinc, Pierluigi Lenoci, Xie Zhuoyang. Sorry if we've missed anyone.</p>
+
+                <p>The source code can be downloaded from <a href="/downloads/include-what-you-use-0.27.src.tar.gz">include-what-you-use-0.27.src.tar.gz</a>. It is equivalent to the <code>0.27</code> tag and <code>clang_23</code> branch.</p>
+
                 <h4>22 Mar 2026</h4>
                 <p>iwyu 0.26 compatible with llvm+clang 22 is released. Major changes:</p>
                 <ul>
